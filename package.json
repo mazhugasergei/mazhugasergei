@@ -1,0 +1,15 @@
+{
+  "scripts": {
+    "start": "ts-node -r tsconfig-paths/register src/index.ts"
+  },
+  "dependencies": {
+    "@types/node": "^20.0.0",
+    "ansi-regex": "^6.2.2",
+    "ansi-to-html": "^0.7.2",
+    "canvas": "^3.2.1",
+    "puppeteer": "^24.35.0",
+    "ts-node": "^10.9.2",
+    "tsconfig-paths": "^4.2.0",
+    "typescript": "^5.0.0"
+  }
+}
