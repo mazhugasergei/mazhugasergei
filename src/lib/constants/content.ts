@@ -15,7 +15,7 @@ export const INFO: Info = [
   [normal("")],
   [bold("Mood", COLORS.BRIGHT_WHITE), normal(": Shipping")],
   [bold("Coffee", COLORS.BRIGHT_WHITE), normal(": ☕ Optional")],
-  [bold("Hobbies", COLORS.BRIGHT_WHITE), normal(": Automation, Open Source")],
+  [bold("Hobbies", COLORS.BRIGHT_WHITE), normal(": cleopatrading.com")],
   [normal("")],
   [bold("Website", COLORS.BRIGHT_WHITE), normal(": https://mazhugasergei.github.io")],
   [bold("Email", COLORS.BRIGHT_WHITE), normal(": ghbdtnghbdtn8@gmail.com")],
