@@ -17,9 +17,9 @@ export const INFO: Info = [
   [bold("Coffee", COLORS.BRIGHT_WHITE), normal(": ☕ Optional")],
   [bold("Hobbies", COLORS.BRIGHT_WHITE), normal(": cleopatrading.com")],
   [normal("")],
-  [bold("Website", COLORS.BRIGHT_WHITE), normal(": https://mazhugasergei.github.io")],
+  [bold("Website", COLORS.BRIGHT_WHITE), normal(": mazhugasergei.github.io")],
   [bold("Email", COLORS.BRIGHT_WHITE), normal(": ghbdtnghbdtn8@gmail.com")],
-  [bold("Discord", COLORS.BRIGHT_WHITE), normal(": notohmm")],
+  [bold("Discord", COLORS.BRIGHT_WHITE), normal(": _msergios")],
 ]
 
 // ASCII Art
