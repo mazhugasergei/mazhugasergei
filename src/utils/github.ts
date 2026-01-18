@@ -84,7 +84,7 @@ export async function getGitHubContributions(
   toDate: Date = new Date()
 ): Promise<GitHubContributions> {
   if (!GITHUB_USERNAME) {
-    throw new Error("GitHub username is not configured. Please set GITHUB_USERNAME in your .env file.")
+    throw new Error("GitHub username is not configured.")
   }
   if (!GITHUB_TOKEN) {
     throw new Error("GitHub token is not configured. Please set GITHUB_TOKEN in your .env file.")
