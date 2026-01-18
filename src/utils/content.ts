@@ -25,7 +25,7 @@ export async function getInfo({ debug = false }: Props = {}) {
       normal(")"),
     ])
   } catch (error) {
-    logger.error("Failed to fetch GitHub contributions:", error as Error)
+    logger.error("Failed to fetch GitHub contributions", error as Error)
     process.exit(1)
   }
 
