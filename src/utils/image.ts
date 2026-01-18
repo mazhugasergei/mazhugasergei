@@ -1,16 +1,11 @@
-import { COLORS } from "@/lib/constants/ansi"
+import { COLORS } from "@/lib/ansi"
 import type { ImageGenerationOptions, Padding, TextSegment } from "@/types/image"
+import { logger } from "@/utils/logger"
 import { createCanvas } from "canvas"
 import fs from "fs"
 
 type Line = TextSegment[]
 
-/**
- * Generate an image from styled text segments
- * @param lines - Array of lines, each containing styled segments
- * @param outputPath - File path to save PNG
- * @param options - Optional configuration
- */
 export async function generateImageFromAscii(
   lines: Line[],
   outputPath: string,
@@ -21,8 +16,8 @@ export async function generateImageFromAscii(
     fontSize = 16,
     lineHeight = 1.35,
     padding = 50,
-    backgroundColor = COLORS.BACKGROUND as string,
-    textColor = COLORS.TEXT as string,
+    backgroundColor = COLORS.background,
+    textColor = COLORS.text,
     cornerRadius = 18,
   } = options
 
@@ -202,10 +197,10 @@ export async function generateImageFromAscii(
 
     // Write SVG file
     fs.writeFileSync(outputPath, svgContent)
-    console.log(`\x1b[42m DONE \x1b[0m Generated ${outputPath} (${width}x${height}px)`)
-  } catch (error: unknown) {
-    const errorMessage = error instanceof Error ? error.message : "Unknown error occurred"
-    console.error(`\x1b[41m ERROR \x1b[0m Failed to generate SVG: ${errorMessage}`)
+    logger.success(`Generated ${outputPath} (${width}x${height}px)`)
+  } catch (error) {
+    const errorMessage = error instanceof Error ? error.message : "Failed to generate SVG"
+    logger.error(errorMessage, error as Error)
     throw error
   }
 }

@@ -1,50 +1,37 @@
-export interface Colors {
+export type ANSIColor =
   // Dark theme colors
-  BLACK: string
-  RED: string
-  GREEN: string
-  YELLOW: string
-  BLUE: string
-  MAGENTA: string
-  CYAN: string
-  WHITE: string
-  GRAY: string
+  | "black"
+  | "red"
+  | "green"
+  | "yellow"
+  | "blue"
+  | "magenta"
+  | "cyan"
+  | "white"
+  | "gray"
 
   // Bright colors
-  BRIGHT_RED: string
-  BRIGHT_GREEN: string
-  BRIGHT_YELLOW: string
-  BRIGHT_BLUE: string
-  BRIGHT_MAGENTA: string
-  BRIGHT_CYAN: string
-  BRIGHT_WHITE: string
+  | "brightRed"
+  | "brightGreen"
+  | "brightYellow"
+  | "brightBlue"
+  | "brightMagenta"
+  | "brightCyan"
+  | "brightWhite"
 
   // Theme specific
-  BACKGROUND: string
-  TEXT: string
-  ACCENT: string
+  | "background"
+  | "text"
+  | "accent"
+  | "success"
 
   // Status
-  SUCCESS: string
-  WARNING: string
-  ERROR: string
-  INFO: string
+  | "warning"
+  | "error"
+  | "info"
+
+export type ANSIColors = {
+  [K in ANSIColor]: string
 }
 
-export interface Styles {
-  RESET: string
-  BOLD: string
-  DIM: string
-  ITALIC: string
-  UNDERLINE: string
-  INVERSE: string
-  HIDDEN: string
-  STRIKETHROUGH: string
-}
-
-// Text formatting helper
-export interface StyledText {
-  text: string
-  color?: string
-  style: string[]
-}
+export type ANSIStyle = "reset" | "bold" | "dim" | "italic" | "underline" | "inverse" | "hidden" | "strikethrough"

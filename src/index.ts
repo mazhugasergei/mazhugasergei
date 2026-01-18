@@ -1,8 +1,9 @@
-import { getAsciiArtData } from "@/utils/art"
+import { getAsciiArtData } from "@/utils/content"
 import { generateImageFromAscii } from "@/utils/image"
 
-// Get the ASCII art data with styling
-const styledLines = getAsciiArtData({ debug: false })
+async function main() {
+  const styledLines = await getAsciiArtData({ debug: false })
+  generateImageFromAscii(styledLines, "image.svg")
+}
 
-// Generate the image
-generateImageFromAscii(styledLines, "image.svg")
+main()

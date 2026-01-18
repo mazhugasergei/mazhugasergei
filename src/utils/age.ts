@@ -1,8 +1,3 @@
-/**
- * Calculate the time passed since a given date until today
- * @param startDate - starting date (ISO string or Date object)
- * @returns formatted uptime string, e.g., "21 years, 6 months"
- */
 export function calculateAge(startDate: string | Date): string {
   const start = startDate instanceof Date ? startDate : new Date(startDate)
   const now = new Date()

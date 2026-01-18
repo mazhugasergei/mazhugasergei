@@ -1,14 +1,22 @@
-export interface StyledText {
-  text: string
-  color?: string
-  style: string[]
-}
-
-export type ArtLine = StyledText[]
+import { ANSIColor, ANSIStyle } from "./ansi"
 
 export interface GetAsciiArtDataOptions {
   debug?: boolean
 }
 
-export type Info = StyledText[][]
-export type Art = StyledText[][]
+type StyledTextBase = {
+  text: string
+  style: ANSIStyle[]
+}
+
+export type StyledTextWithANSIColor = StyledTextBase & {
+  color?: ANSIColor
+}
+
+export type StyledTextWithHEXColor = StyledTextBase & {
+  color?: string
+}
+
+export type ArtLine = StyledTextWithHEXColor[]
+export type Info = StyledTextWithHEXColor[][]
+export type Art = StyledTextWithHEXColor[][]
