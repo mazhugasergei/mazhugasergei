@@ -19,7 +19,7 @@ export async function getInfo({ debug = false }: Props = {}) {
     info.push(
       [normal("")],
       [
-        bold("GitHub", "brightWhite"),
+        bold("Lines", "brightWhite"),
         normal(": +" + stats.linesChanged.total.toLocaleString() + " ("),
         normal("+" + stats.linesChanged.additions.toLocaleString(), "brightGreen"),
         normal(", "),
