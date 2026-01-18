@@ -16,14 +16,17 @@ export async function getInfo({ debug = false }: Props = {}) {
   // GitHub
   try {
     const stats = await getGitHubContributions()
-    info.push([
-      bold("GitHub", "brightWhite"),
-      normal(": +" + stats.linesChanged.total.toLocaleString() + " ("),
-      normal("+" + stats.linesChanged.additions.toLocaleString(), "brightGreen"),
-      normal(", "),
-      normal("-" + stats.linesChanged.deletions.toLocaleString(), "brightRed"),
-      normal(")"),
-    ])
+    info.push(
+      [normal("")],
+      [
+        bold("GitHub", "brightWhite"),
+        normal(": +" + stats.linesChanged.total.toLocaleString() + " ("),
+        normal("+" + stats.linesChanged.additions.toLocaleString(), "brightGreen"),
+        normal(", "),
+        normal("-" + stats.linesChanged.deletions.toLocaleString(), "brightRed"),
+        normal(")"),
+      ]
+    )
   } catch (error) {
     logger.error("Failed to fetch GitHub contributions", error as Error)
     process.exit(1)
