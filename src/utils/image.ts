@@ -142,46 +142,27 @@ export async function generateImageFromAscii(
 
   // Save SVG
   try {
-    // Create SVG content with rounded corners and animation styles
+    // Create SVG content with rounded corners
     let svgContent = `<?xml version="1.0" encoding="UTF-8" standalone="no"?>\n`
-    svgContent += `<svg width="${width}" height="${height}" xmlns="http://www.w3.org/2000/svg">\n`
-
     // Add a clip path for rounded corners
+    svgContent += `<svg width="${width}" height="${height}" xmlns="http://www.w3.org/2000/svg">\n`
     svgContent += `  <defs>\n`
     svgContent += `    <clipPath id="rounded-corners">\n`
     svgContent += `      <rect width="100%" height="100%" rx="${cornerRadius}" ry="${cornerRadius}" />\n`
     svgContent += `    </clipPath>\n`
-
-    // Add animation styles
-    svgContent += `    <style>\n`
-    svgContent += `      @keyframes fadeIn {\n`
-    svgContent += `        from { opacity: 0; }\n`
-    svgContent += `        to { opacity: 1; }\n`
-    svgContent += `      }\n`
-    svgContent += `      .line {\n`
-    svgContent += `        opacity: 0;\n`
-    svgContent += `        animation: fadeIn 0.1s steps(2, jump-none) forwards;\n`
-    svgContent += `      }\n`
-    svgContent += `    </style>\n`
     svgContent += `  </defs>\n`
 
     // Add background with rounded corners
     svgContent += `  <rect width="100%" height="100%" fill="${backgroundColor}" rx="${cornerRadius}" ry="${cornerRadius}" clip-path="url(#rounded-corners)" />\n`
 
-    // Add text elements with proper line height and animation for info text only
+    // Add text elements with proper line height
     validLines.forEach((line, row) => {
       let x = paddingObj.left
       // Center text vertically in its line, accounting for the font's baseline
       const y = paddingObj.top + row * lineHeightPx + (lineHeightPx + fontSize) / 2
-      const delay = (row * 0.06).toFixed(1) // delay between lines
-
-      // Find the index where the padding starts (after the art part)
-      const paddingIndex = line.findIndex(
-        (segment) => segment.text.trim() === "" && segment.color === COLORS.BACKGROUND
-      )
 
       // Process each segment in the line
-      line.forEach((segment, segmentIndex) => {
+      line.forEach((segment) => {
         const { text, color = textColor, style = [] } = segment
         const isBold = style.includes("bold")
         const isItalic = style.includes("italic")
@@ -196,13 +177,7 @@ export async function generateImageFromAscii(
           // Replace spaces with &nbsp; to ensure they're preserved
           const escapedText = text.replace(/ /g, "&#160;")
 
-          // Determine if this is part of the info text (after the padding)
-          const isInfoText = paddingIndex !== -1 && segmentIndex > paddingIndex
-
-          svgContent += `  <text ${isInfoText ? 'class="line"' : ""} x="${x}" y="${y}" `
-          if (isInfoText) {
-            svgContent += `style="animation-delay: ${delay}s" `
-          }
+          svgContent += `  <text x="${x}" y="${y}" `
           svgContent += `font-family="'Cascadia Mono', 'Cascadia Code', Consolas, 'Courier New', monospace" `
           svgContent += `font-size="${fontSize}px" `
           svgContent += `font-weight="${fontWeight}" font-style="${fontStyle}" `
