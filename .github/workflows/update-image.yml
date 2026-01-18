@@ -16,6 +16,9 @@ permissions:
 jobs:
   update-image:
     runs-on: ubuntu-latest
+    env:
+      GITHUB_USERNAME: ${{ vars.USERNAME }}
+      GITHUB_TOKEN: ${{ secrets.TOKEN }}
 
     steps:
       - uses: actions/checkout@v4
