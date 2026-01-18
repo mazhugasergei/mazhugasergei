@@ -9,7 +9,7 @@ export const INFO: Info = [
   [normal("--------------------")],
   [bold("OS", COLORS.BRIGHT_WHITE), normal(": Debian GNU/Linux 13 (trixie) x86_64")],
   [bold("Host", COLORS.BRIGHT_WHITE), normal(": Software Development")],
-  [bold("Kernel", COLORS.BRIGHT_WHITE), normal(": BSc Information Systems & Technologies")],
+  [bold("Kernel", COLORS.BRIGHT_WHITE), normal(": BSc Information Systems and Technologies")],
   [bold("Uptime", COLORS.BRIGHT_WHITE), normal(`: ${calculateAge("2002-07-23")}`)],
   [bold("Locale", COLORS.BRIGHT_WHITE), normal(": English, Russian")],
   [normal("")],

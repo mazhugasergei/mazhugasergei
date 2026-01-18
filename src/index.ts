@@ -5,8 +5,4 @@ import { generateImageFromAscii } from "@/utils/image"
 const styledLines = getAsciiArtData({ debug: false })
 
 // Generate the image
-generateImageFromAscii(styledLines, "image.svg", {
-  padding: {
-    right: 200,
-  },
-})
+generateImageFromAscii(styledLines, "image.svg")
