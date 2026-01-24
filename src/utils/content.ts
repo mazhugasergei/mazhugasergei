@@ -20,7 +20,12 @@ export async function getInfo({ debug = false }: Props = {}) {
       [normal("")],
       [
         bold("Lines", "brightWhite"),
-        normal(": +" + stats.linesChanged.total.toLocaleString() + " ("),
+        normal(
+          ": " +
+            (stats.linesChanged.total > 0 ? "+" : stats.linesChanged.total < 0 ? "-" : "") +
+            stats.linesChanged.total.toLocaleString() +
+            " ("
+        ),
         normal("+" + stats.linesChanged.additions.toLocaleString(), "brightGreen"),
         normal(", "),
         normal("-" + stats.linesChanged.deletions.toLocaleString(), "brightRed"),
