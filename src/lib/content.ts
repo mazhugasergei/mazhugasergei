@@ -12,11 +12,9 @@ export const INFO: Info = [
   [bold("Uptime", "brightWhite"), normal(`: ${calculateAge("2002-07-23")}`)],
   [bold("Locale", "brightWhite"), normal(": English, Russian")],
   [normal("")],
-  [bold("Mood", "brightWhite"), normal(": Shipping")],
-  [bold("Coffee", "brightWhite"), normal(": ☕ Optional")],
+  [bold("Website", "brightWhite"), normal(": mazhugasergei.github.io")],
   [bold("Hobbies", "brightWhite"), normal(": cleopatrading.com")],
   [normal("")],
-  [bold("Website", "brightWhite"), normal(": mazhugasergei.github.io")],
   [bold("Email", "brightWhite"), normal(": ghbdtnghbdtn8@gmail.com")],
   [bold("Discord", "brightWhite"), normal(": _msergios")],
 ]
