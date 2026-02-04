@@ -2,10 +2,13 @@ import type { Art, Info } from "@/types/content"
 import { calculateAge } from "@/utils/age"
 import { bold, normal } from "@/utils/ansi"
 
+const USERNAME = "sergei"
+const HOSTNAME = "mazhuga"
+
 // Art data
 export const INFO: Info = [
-  [bold("sergei", "brightWhite"), normal("@"), bold("mazhuga", "brightWhite")],
-  [normal("--------------------")],
+  [bold(USERNAME, "brightWhite"), normal("@"), bold(HOSTNAME, "brightWhite")],
+  [normal("-".repeat(USERNAME.length + 1 + HOSTNAME.length))],
   [bold("OS", "brightWhite"), normal(": Debian GNU/Linux 13 (trixie) x86_64")],
   [bold("Host", "brightWhite"), normal(": Software Development")],
   [bold("Kernel", "brightWhite"), normal(": BSc Information Systems and Technologies")],

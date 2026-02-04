@@ -1,4 +1,4 @@
-import { COLORS } from "@/lib/ansi"
+import { COLORS } from "@/lib/constants"
 import type { ImageGenerationOptions, Padding, TextSegment } from "@/types/image"
 import { logger } from "@/utils/logger"
 import { createCanvas } from "canvas"
@@ -197,7 +197,7 @@ export async function generateImageFromAscii(
 
     // Write SVG file
     fs.writeFileSync(outputPath, svgContent)
-    logger.success(`Generated ${outputPath} (${width}x${height}px)`)
+    logger.done(`Generated ${outputPath} (${width}x${height}px)`)
   } catch (error) {
     const errorMessage = error instanceof Error ? error.message : "Failed to generate SVG"
     logger.error(errorMessage, error as Error)

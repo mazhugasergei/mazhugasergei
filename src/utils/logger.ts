@@ -1,6 +1,6 @@
 import { NODE_ENV } from "@/lib/env"
 
-type LogLevel = "info" | "success" | "warn" | "error"
+type LogLevel = "info" | "done" | "warn" | "error"
 
 export const LOG_COLORS = {
   reset: "\x1b[0m",
@@ -41,7 +41,7 @@ export function log({ level = "info", message, data }: LogOptions): void {
   let prefix = ""
 
   switch (level) {
-    case "success":
+    case "done":
       prefix = `${LOG_COLORS.bgGreen}${LOG_COLORS.black} ${levelUpper} ${LOG_COLORS.reset} `
       break
     case "warn":
@@ -66,7 +66,7 @@ export function log({ level = "info", message, data }: LogOptions): void {
 // Helper methods for common log types
 export const logger = {
   info: (message: string, data?: any) => log({ level: "info", message, data }),
-  success: (message: string, data?: any) => log({ level: "success", message, data }),
+  done: (message: string, data?: any) => log({ level: "done", message, data }),
   warn: (message: string, data?: any) => log({ level: "warn", message, data }),
   error: (message: string, error?: Error | string) => {
     const errorMessage =

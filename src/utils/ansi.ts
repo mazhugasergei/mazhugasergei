@@ -1,4 +1,4 @@
-import { COLORS } from "@/lib/ansi"
+import { COLORS } from "@/lib/constants"
 import type { ANSIColor, ANSIStyle } from "@/types/ansi"
 import { StyledTextWithHEXColor } from "@/types/content"
 
