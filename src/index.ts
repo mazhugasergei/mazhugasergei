@@ -3,7 +3,7 @@ import { generateImageFromAscii } from "@/utils/image"
 
 async function main() {
   const styledLines = await getAsciiArtData({ debug: false })
-  generateImageFromAscii(styledLines, "image.svg")
+  generateImageFromAscii(styledLines, "image.svg", { padding: { right: 300 } })
 }
 
 main()
