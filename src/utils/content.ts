@@ -1,4 +1,3 @@
-import { INFO_OFFSET } from "@/lib/constants"
 import { ART, INFO } from "@/lib/content"
 import type { ANSIColor } from "@/types/ansi"
 import type { ArtLine, GetAsciiArtDataOptions, StyledTextWithHEXColor } from "@/types/content"
@@ -52,7 +51,9 @@ export async function getInfo({ debug = false }: Props = {}) {
   return info
 }
 
-export async function getAsciiArtData({ debug = false }: GetAsciiArtDataOptions = {}): Promise<ArtLine[]> {
+export async function getAsciiArtData({ debug = false, infoOffset = 4 }: GetAsciiArtDataOptions = {}): Promise<
+  ArtLine[]
+> {
   const info = await getInfo({ debug })
 
   let infoToUse: ArtLine[] = [...info]
@@ -69,7 +70,7 @@ export async function getAsciiArtData({ debug = false }: GetAsciiArtDataOptions 
     const infoLine = infoToUse[i] || []
 
     const artLength = artLine.reduce((sum: number, part: StyledTextWithHEXColor) => sum + part.text.length, 0)
-    let padWidth = MAX_LENGTH - artLength + INFO_OFFSET
+    let padWidth = MAX_LENGTH - artLength + infoOffset
     if (padWidth < 1) padWidth = 1
 
     // Combine art and info with padding

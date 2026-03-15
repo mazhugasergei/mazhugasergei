@@ -2,6 +2,7 @@ import { ANSIColor, ANSIStyle } from "./ansi"
 
 export interface GetAsciiArtDataOptions {
   debug?: boolean
+  infoOffset?: number
 }
 
 type StyledTextBase = {

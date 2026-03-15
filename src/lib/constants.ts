@@ -32,5 +32,3 @@ export const COLORS: ANSIColors = {
   error: "#e06c75",
   info: "#61afef",
 } as const
-
-export const INFO_OFFSET = 4

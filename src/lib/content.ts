@@ -24,7 +24,6 @@ export const INFO: Info = [
 
 // ASCII Art
 export const ART: Art = [
-  "                    ",
   " ▄▀▄▀▀▀▀▄▀▄         ",
   " █        ▀▄      ▄ ",
   "█  ▀  ▀     ▀▄▄  █ █",
