@@ -6,7 +6,7 @@ async function main() {
   generateImageFromAscii(styledLines, "image.svg", {
     padding: {
       left: 70,
-      right: 400,
+      right: 350,
     },
   })
 }
